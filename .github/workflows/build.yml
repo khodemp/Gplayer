@@ -27,14 +27,12 @@ jobs:
 
       - name: Get dependencies
         run: flutter pub get
-        working-directory: gplayer
 
       - name: Build release APK
         run: flutter build apk --release
-        working-directory: gplayer
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: gplayer-release-apk
-          path: gplayer/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
